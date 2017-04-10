@@ -1,0 +1,134 @@
+<!-- author: kyhrt
+     finish: 4.10
+ -->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .container {
+        /* text-align: center; */
+        color: #bcbcbc;
+      }
+      .container>img {
+        height: : 100px;
+        /* border: 1px solid red; */
+      }
+      .container>ul {
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 16px;
+        font-weight: bolder;
+      }
+      .container>ul>li>a {
+        color: #bcbcbc;
+      }
+      .container>ul>li>a:hover {
+        color: green;
+      }
+      #info {
+        margin-top: 50px;
+        text-align: center;
+
+      }
+      .media-object {
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        margin-top: -10px;
+        vertical-align: middle;
+        text-align: center;
+        border: 2px solid #bcbcbc;
+        padding-top: 25px;
+      }
+      .media {
+        padding-left: 50px;
+        padding-right: 50px;
+        overflow: visible;
+        margin: 50px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #bcbcbc;
+      }
+      .highlight {
+        color: #3eb3a5;
+      }
+      hr {
+        margin: 0;
+        padding: 0;
+      }
+      h4 {
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="assets/1.png" alt="首页背景" class="img-responsive">
+
+      <!-- 标签栏 -->
+      <ul class="nav nav-pills nav-justified">
+        <li class="nav-item"><a role='button' class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="" class="nav-link">About</a></li>
+
+        <!-- 下拉菜单示例 -->
+        <li class="nav-item dropdown"><a role='button' class="nav-link dropdown-toggle" data-toggle='dropdown'>Category <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="">Diary</a></li>
+            <li><a href="">Personal</a></li>
+            <li><a href="">Holiday</a></li>
+            <li><a href="">Work</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+      </ul>
+      <p id="info">Hello,Welcome to my Blog</p>
+      
+      <!-- 文章示例 -->
+      <div class="media">
+        <div class="media-left"><p class="media-object">31&nbspjul</p></div>
+        <div class="media-body">
+          <p>cat:&nbsp<span class="highlight small">Diary,Personal</span>&nbsp|&nbsp
+          <span class="glyphicon glyphicon-heart"></span>&nbsp<span class="highlight small">123赞</span>&nbsp|&nbsp
+          <span class="glyphicon glyphicon-comment"></span>&nbsp <span class="highlight small">4个评论</span></p>
+          <hr>
+          <h4 class="media-heading">the title</h4>
+          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum </p>
+          <button class="btn btn-success btn-sm">learn more</button>
+        </div>
+      </div>
+
+      <div class="media">
+        <div class="media-left"><p class="media-object">31&nbspjul</p></div>
+        <div class="media-body">
+          <p>cat:&nbsp<span class="highlight small">Diary,Personal</span>&nbsp|&nbsp
+          <span class="glyphicon glyphicon-heart"></span>&nbsp<span class="highlight small">123赞</span>&nbsp|&nbsp
+          <span class="glyphicon glyphicon-comment"></span>&nbsp <span class="highlight small">4个评论</span></p>
+          <hr>
+          <h4 class="media-heading">the title</h4>
+          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum </p>
+          <button class="btn btn-success btn-sm">learn more</button>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
