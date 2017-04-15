@@ -21,31 +21,47 @@
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+
       .container {
         /* text-align: center; */
         color: #bcbcbc;
       }
+
       .container>img {
         height: : 100px;
         /* border: 1px solid red; */
       }
+
       .container>ul {
         padding-left: 100px;
         padding-right: 100px;
         font-size: 16px;
         font-weight: bolder;
       }
+
       .container>ul>li>a {
         color: #bcbcbc;
       }
+
       .container>ul>li>a:hover {
         color: green;
       }
+
       #info {
         margin-top: 50px;
         text-align: center;
 
       }
+
+      .media {
+        padding-left: 50px;
+        padding-right: 50px;
+        overflow: visible;
+        margin: 50px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #bcbcbc;
+      }
+
       .media-object {
         width: 70px;
         height: 70px;
@@ -56,23 +72,39 @@
         border: 2px solid #bcbcbc;
         padding-top: 25px;
       }
-      .media {
-        padding-left: 50px;
-        padding-right: 50px;
-        overflow: visible;
-        margin: 50px;
-        padding-bottom: 20px;
-        border-bottom: 1px dashed #bcbcbc;
-      }
-      .highlight {
-        color: #3eb3a5;
-      }
+      
       hr {
         margin: 0;
         padding: 0;
       }
+
       h4 {
         padding-top: 10px;
+      }
+
+      ul.nav>li:nth-child(3) {
+        position: relative;
+        /* cursor: none; */
+      }
+
+      ul.nav>li:nth-child(3) span {
+        display: inline-block;
+        width: 130px;
+        height: 130px;
+        border-radius: 130px;
+        background: #3eb3a5;
+        position: absolute;
+        top: -80px;
+        left: -10px;
+        z-index: 10000;
+        border: 10px solid white;
+        /* 此处输入头像背景 */
+        background-image: url('');
+        background-repeat: no-repeat;
+      }
+
+      .highlight {
+        color: #3eb3a5;
       }
     </style>
   </head>
@@ -84,12 +116,16 @@
       <ul class="nav nav-pills nav-justified">
         <li class="nav-item"><a role='button' class="nav-link">Home</a></li>
         <li class="nav-item"><a href="" class="nav-link">About</a></li>
+        
+        <!-- 图片 -->
+        <li class="nav-item"><a href="" class="nav-link"><span></span></a></li>
 
         <!-- 下拉菜单示例 -->
         <li class="nav-item dropdown"><a role='button' class="nav-link dropdown-toggle" data-toggle='dropdown'>Category <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="">Diary</a></li>
             <li><a href="">Personal</a></li>
+            <li></li>
             <li><a href="">Holiday</a></li>
             <li><a href="">Work</a></li>
           </ul>
