@@ -1,0 +1,348 @@
+<!-- author: kyhrt
+     finish: 4.10
+ -->
+
+
+<!-- 总结：
+bootstrap总是出现的错误：选择优先级，对样式不熟悉
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      body {
+        background-image: url('assets/2.jpg');
+      }
+      .navbar {
+        background: #303a40;
+        height: 55px;
+      }
+      
+      /* 商标默认有padding */
+      .navbar > .container .navbar-brand {
+        padding: 5px;
+        /* 调整brand的位置 */
+        margin-left: -50px;
+      }
+
+      /* 修改的时候优先级很重要，不然样式不生效 */
+      .navbar-default ul.nav>li>a:hover {
+        color: white;
+        background: #303a40;
+      }
+
+      .navbar {
+        border-bottom: 0;
+      }
+      
+      ul {
+        padding: 0;
+      }
+      
+      /* .tab {
+        margin-top: 10px;
+      } */
+
+      /* .tab .tab-right {
+        margin-left: 10px;
+      } */
+
+      /* .tab>.tab-left li {
+        list-style: none;
+        
+        display: block;
+        width: 92px;
+        height: 66px;
+        background-color: rgba(255, 255, 255, .2);
+        
+        vertical-align: middle;
+        text-align: center;
+        cursor: pointer;
+        line-height: 66px;
+        font-size: 16px;
+        color: white;
+      } */
+      
+      /* .tab>.tab-left li:hover {
+        background-color: rgba(0, 0, 0, .2);
+      } */
+
+      .left {
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        width: 600px;
+        height: 470px;
+        margin-top: 67px;
+        margin-left: 40px;
+        margin-right: 10px;
+      }
+      
+      form {
+        width: 600px;
+      }
+      .form-inline .form-control {
+        display: inline-block;
+        width: 520px;
+      }
+
+      /* .tab-right {
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+      } */
+
+      .tab-pane li {
+        list-style: none;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      .tab-pane img {
+        width: 120px;
+        height: 60px;
+      }
+      .nav-stacked li a {
+        margin: 0;
+        padding: 0;
+        width: 92px;
+        height: 66px;
+        background-color: rgba(255, 255, 255, .2);
+        
+        vertical-align: middle;
+        text-align: center;
+
+        line-height: 66px;
+        font-size: 16px;
+        color: white;
+      }
+      .nav-stacked li a:hover, .nav-stacked li a:focus {
+        background-color: rgba(0, 0, 0, .2);
+      }
+      .left .container {
+        margin-top: 10px;
+      }
+      ul .tab-pane {
+        display: flex;
+        flex-wrap: wrap;
+        
+      }
+      .tab-content ul {
+        padding: 0;
+      }
+      .login {
+        /* float: right; */
+        width: 370px;
+        height: 445px;
+        background-color: white;
+        padding-top: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-top: 67px;
+        
+      }
+      .login .form-group input {
+        margin-top: 20px;
+        height: 50px;
+      }
+      .content {
+        display: flex;
+      }
+      .login .form-group button {
+        margin-top: 20px;
+        
+      }
+
+      .form-group button {
+        background-color: #FF9500;
+        border: 0;
+        color: white;
+      }
+      .form-group button:hover, .form-group .btn-default:focus, .form-group .btn-default:active {
+        background-color: #FFAA33;
+        color: white;
+        border: 0;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand"><img src="assets/8.png" alt="brand"></a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item"><a href="" class="nav-link">我是求职者</a></li>
+            <li class="nav-item"><a href="" class="nav-link">我是HR</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="content">
+
+    <!-- 搜索 -->
+    <div class="left">
+      <form action="" class="form-inline">
+        <div class="form-group ">
+          <!-- <div class="input-group"> -->
+          <input type="text" class="form-control" placeholder="输入职位搜索关键词，如Java工程师">
+          <!-- <a role='button' class="btn input-group-addon">search</a> -->
+          <button class="btn btn-default">search</button>
+          
+        </div>
+      </form>
+
+      <div class="container">
+
+      <!-- 标签 -->
+      <div class="row">
+        <ul class="nav nav-stacked col-sm-2">
+          <li class="nav-item"><a href="#IT" class="nav-link" data-toggle='tab'>IT</a></li>
+          <li class="nav-item"><a href="#finance" class="nav-link" data-toggle='tab'>金融</a></li>
+          <li class="nav-item"><a href="#room" class="nav-link" data-toggle='tab'>房地产</a></li>
+          <li class="nav-item"><a href="#commodity" class="nav-link" data-toggle='tab'>消费品</a></li>
+          <li class="nav-item"><a href="#car" class="nav-link" data-toggle='tab'>汽车制造</a></li>
+          <li class="nav-item"><a href="#medical" class="nav-link" data-toggle='tab'>医疗化工</a></li>
+        </ul>
+        <div class="tab-content">
+        
+        <!-- 标签分页 -->
+        <ul class="col-sm-10 tab-pane active" id="IT">
+          <li><a href=""><img src="assets/3.jpg" alt=""></a></li>
+          <li><a href=""><img src="assets/4.png" alt=""></a></li>
+          <li><a href=""><img src="assets/5.png" alt=""></a></li>
+          <li><a href=""><img src="assets/6.jpg" alt=""></a></li>
+          <li><a href=""><img src="assets/7.png" alt=""></a></li>
+          <li><a href=""><img src="assets/9.png" alt=""></a></li>
+          <li><a href=""><img src="assets/10.jpg" alt=""></a></li>
+          <li><a href=""><img src="assets/11.png" alt=""></a></li>
+          <li><a href=""><img src="assets/12.png" alt=""></a></li>
+          <li><a href=""><img src="assets/13.jpg" alt=""></a></li>
+          <li><a href=""><img src="assets/14.png" alt=""></a></li>
+          <li><a href=""><img src="assets/15.png" alt=""></a></li>
+          <li><a href=""><img src="assets/16.png" alt=""></a></li>
+        </ul>
+        <ul class="col-sm-9 tab-pane" id="finance">
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+        <ul class="col-sm-9 tab-pane" id="room">
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+        <ul class="col-sm-9 tab-pane" id="commodity">
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+        <ul class="col-sm-9 tab-pane" id="car">
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+        <ul class="col-sm-9 tab-pane" id="medical">
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+          <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- 注册表单 -->
+    <form class="right login">
+      <h3 style="color: #FF9500">10秒注册，获得高薪</h3>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="昵称">
+        <input class="form-control" type="password" placeholder="密码">
+        <button type="submit" class="btn btn-default btn-lg">立即注册</button>
+        
+      </div>
+
+      <!-- 不能放在form-control里面 -->
+      <div class="checkbox">
+          <label>
+          <input type="checkbox">我已阅读并同意<a href="">《用户服务协议》</a>
+          </label>
+      </div>
+      <p>已有账号？直接<a href="#">登录</a></p>
+    </form>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
